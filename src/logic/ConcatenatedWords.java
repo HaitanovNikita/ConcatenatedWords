@@ -7,7 +7,7 @@ import java.util.*;
 public class ConcatenatedWords {
 
     protected static int locationNumber = 90;
-    private static int maxLength = Integer.MIN_VALUE;
+
 
     protected static ArrayList<String> sortWords(ArrayList<String> validWords) {
         validWords.sort((str1, str2) -> str1.length() == str2.length() ? 0 : str1.length() < str2.length() ? 1 : -1);
@@ -57,27 +57,10 @@ public class ConcatenatedWords {
         }
 }
 
-    public static HashSet<String> readFile(String filePath) throws Exception {
-        HashSet<String> hashSetString = new HashSet<>();
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(filePath));
-            String s = br.readLine();
-                while (s != null) {
-                    maxLength = Math.max(maxLength, s.length());
-                    if (s.isEmpty()==false)
-                        hashSetString.add(s.trim());
-                    s = br.readLine();
-                }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return hashSetString;
-    }
 
 
-    public static int getMaxLength() {
-        return maxLength;
-    }
+
+
 
 }
 
